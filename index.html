@@ -8,11 +8,36 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+    <style>
+    *{
+      margin:0;
+    }
+    body{
+      display:rgba(0,10,0,0.3);
+    }
+    main{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
+    article{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      width: 900px;
+      flex-direction: column;
+    }
+    </style>
   </head>
   <body>
-    <div id="айди"></div>
-    <div id="like_button_container"></div>
+    <main>
+      <article>
+        <div id="айди"></div>
+        <div id="like_button_container"></div>
+      </article>
+    </main>
     <script type="text/babel">
 
       ReactDOM.render(
