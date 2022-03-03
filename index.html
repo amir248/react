@@ -8,16 +8,41 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
   </head>
   <body>
-    <div id="root"></div>
+    <div id="айди"></div>
+    <div id="like_button_container"></div>
     <script type="text/babel">
 
       ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
+        <h1>Amir, Shikaren!!!</h1>,
+        document.getElementById('айди')
       );
 
+      const e = React.createElement;
+
+      class LikeButton extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { liked: false };
+        }
+
+        render() {
+          if (this.state.liked) {
+            return 'You liked this.';
+          }
+
+          return e(
+            'button',
+            { onClick: () => this.setState({ liked: true }) },
+            'Like'
+          );
+        }
+      }
+
+      const domContainer = document.querySelector('#like_button_container');
+      ReactDOM.render(e(LikeButton), domContainer);
     </script>
     <!--
       Note: this page is a great way to try React but it's not suitable for production.
